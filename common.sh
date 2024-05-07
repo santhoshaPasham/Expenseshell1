@@ -1,5 +1,13 @@
 #!/bin/bash
 
+set -e 
+
+failure(){
+    echo "Failed at $1: $2"
+}
+
+trap 'failure ${LINENO} "$BASH_COMMAND"' ERR
+
 USERID=$(id -u)
 TIMESTAMP=$(date +%F-%H-%S)
 SCRIPTNAME=$( echo $0 | cut -d "." -f1)

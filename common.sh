@@ -10,6 +10,17 @@ N="\e[0m"
 Y="\e[33m"
 
 
+VALIDATE(){
+if [ $1 -ne 0 ]
+then 
+    echo -e "$2 is $R failure $N"
+    exit 1
+else 
+    echo -e "$2 is $G success $N"
+fi
+}
+
+
 check_root(){
 if [ $USERID -ne 0 ]
 then 
@@ -20,12 +31,3 @@ else
 fi 
 }
 
-VALIDATE(){
-if [ $1 -ne 0 ]
-then 
-    echo -e "$2 is $R failure $N"
-    exit 1
-else 
-    echo -e "$2 is $G success $N"
-fi
-}

@@ -10,7 +10,7 @@ N="\e[0m"
 Y="\e[33m"
 
 
-Check_root(){
+check_root(){
 if [ $USERID -ne 0 ]
 then 
     echo "Please run this command with root access"

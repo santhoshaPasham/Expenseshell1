@@ -3,7 +3,7 @@
 
 source ./common.sh
 
-Check_root
+check_root
 
 echo "Please enter password"
 read root_password
